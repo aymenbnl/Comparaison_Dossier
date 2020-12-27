@@ -104,7 +104,7 @@ public class Aplication extends JFrame implements ActionListener{
 		setTitle("Synchronisation");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 666, 545);
+		setBounds(100, 100, 801, 595);
 		this.setLocationRelativeTo(null);		
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBackground(SystemColor.control);
@@ -201,7 +201,7 @@ public class Aplication extends JFrame implements ActionListener{
     			rep_2.setText(Integer.toString(nb_rep)+"Repertoire");
     			fcoun_1.setText(Integer.toString(nb_file)+"File");
     			repcount_1.setText(Integer.toString(nb_rep)+"Repertoire");
-				if(new File(tf.getText()).exists()&& new File(tf2.getText()).exists() ){//vérifier si les repertoires Vous avez choisi est correct
+				if(new File(tf.getText()).exists()&& new File(tf2.getText()).exists() ){//vï¿½rifier si les repertoires Vous avez choisi est correct
 				model.setRowCount(0);
 				model2.setRowCount(0);
 				model4=(DefaultTableModel) tab3.getModel();
@@ -215,16 +215,16 @@ public class Aplication extends JFrame implements ActionListener{
 				LinkedList<File> fs=new LinkedList<File>();
 				File file2=new File(tf2.getText());
 				LinkedList<File> fs2=new LinkedList<>();
-                if(tf.getText().equals("")||tf2.getText().equals("")){          //vérifier si Vous avez selectioner 2 repertoires ou non 
+                if(tf.getText().equals("")||tf2.getText().equals("")){          //vï¿½rifier si Vous avez selectioner 2 repertoires ou non 
                 	JOptionPane.showMessageDialog(null,"select the files you want to compare ","Attention",0);
                 }
                 else{
-				if (tf.getText().equals(tf2.getText())){                //vérifier si Vous avez selectionner le meme rep
+				if (tf.getText().equals(tf2.getText())){                //vï¿½rifier si Vous avez selectionner le meme rep
 					JOptionPane.showMessageDialog(null,"you selected the same file :"+tf.getText()+"\n"+tf2.getText(),"Attention",0);
 					}
 					else{
 			
-					for(File f:file.listFiles()){                //mettre le contenu de le 1ere répertoire dans une list
+					for(File f:file.listFiles()){                //mettre le contenu de le 1ere rï¿½pertoire dans une list
 					if(!(f.getName().equals(new File(tf2.getText()).getName()))){	
 		  
 					      fs.add(f);
@@ -242,7 +242,7 @@ public class Aplication extends JFrame implements ActionListener{
 			        }
 					  tab2.setModel(model2);  
 					fs.clear();
-					for(File f2:file2.listFiles()){                    // //mettre le contenu de le 2eme répertoire dans une list
+					for(File f2:file2.listFiles()){                    // //mettre le contenu de le 2eme rï¿½pertoire dans une list
 						if(!(f2.getName().equals(new File(tf.getText()).getName()))){	
 						fs2.add(f2);
 						}
@@ -358,8 +358,8 @@ public class Aplication extends JFrame implements ActionListener{
 				}
 		        }
                 }
-                else{         // les répertoires Vous avez choisi est incorrect
-                	JOptionPane.showMessageDialog(null,"vous avez sélectionné des faux fichiers","Attention",0);
+                else{         // les rï¿½pertoires Vous avez choisi est incorrect
+                	JOptionPane.showMessageDialog(null,"vous avez sï¿½lectionnï¿½ des faux fichiers","Attention",0);
                 	}
 		}
 		}
@@ -379,10 +379,10 @@ public class Aplication extends JFrame implements ActionListener{
 				int taile1= tab.getRowCount();
 				int taile2= tab2.getRowCount();
 				if ((taile1==0)&&(taile2==0)){
-					JOptionPane.showMessageDialog(null,"aucun fichier à Synchroniser ");	
+					JOptionPane.showMessageDialog(null,"aucun fichier ï¿½ Synchroniser ");	
 					}
 			   	else{
-			   		//copier les fichiers à partir de la gauche si le sens de la synchronisation des fichiers à partir de gauche a droite 
+			   		//copier les fichiers ï¿½ partir de la gauche si le sens de la synchronisation des fichiers ï¿½ partir de gauche a droite 
 			   		if(gauche_droit.isEnabled()){          
 			   		for(int i =0;i<tab.getRowCount();i++){
 			   			if(tab3.getValueAt(i, 0).toString()=="true"){
@@ -422,7 +422,7 @@ public class Aplication extends JFrame implements ActionListener{
 			   		
 			   		}
 			   		}
-			   	//copier les fichiers à partir de la droite si le sens de la synchronisation des fichiers à partir de gauche a droite 
+			   	//copier les fichiers ï¿½ partir de la droite si le sens de la synchronisation des fichiers ï¿½ partir de gauche a droite 
 			   		if(droit_gauche.isEnabled()){
 					for(int i =0;i<tab2.getRowCount();i++){
 			   			if(tab3.getValueAt(i, 0).toString()=="true"){
@@ -473,7 +473,7 @@ public class Aplication extends JFrame implements ActionListener{
 						JOptionPane.showMessageDialog(null,"Synchronisation est terminer avec success ","Information",1);
 				        }
 				        else{
-				        	JOptionPane.showMessageDialog(null,"la synchronisation est Non implémenté","Information",1);	
+				        	JOptionPane.showMessageDialog(null,"la synchronisation est Non implï¿½mentï¿½","Information",1);	
 				        }
 						
 						syn=false;
@@ -504,7 +504,7 @@ public class Aplication extends JFrame implements ActionListener{
 		panel.add(button_3);		
 		
 		JButton button = new JButton("");
-		//paramétre de comparé button action
+		//paramï¿½tre de comparï¿½ button action
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			new cop_set().setVisible(true);	
@@ -797,6 +797,11 @@ public class Aplication extends JFrame implements ActionListener{
 	    rep_2.setBounds(94, 11, 130, 22);
 	    rep_2.setVisible(false);
 	    panel_6.add(rep_2);
+	    
+	    JLabel lblNewLabel = new JLabel("New label");
+	    lblNewLabel.setIcon(new ImageIcon("C:\\Users\\DELL\\Desktop\\1.png"));
+	    lblNewLabel.setBounds(0, 0, 795, 544);
+	    contentPane.add(lblNewLabel);
 	}
 
 	@Override

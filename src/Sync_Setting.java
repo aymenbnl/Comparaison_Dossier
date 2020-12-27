@@ -18,6 +18,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.UIManager;
 import java.awt.Toolkit;
+import java.awt.Dialog.ModalExclusionType;
+import java.awt.Dialog.ModalityType;
 
 public class Sync_Setting extends JDialog {
 
@@ -48,8 +50,9 @@ public class Sync_Setting extends JDialog {
 	 * Create the dialog.
 	 */
 	public Sync_Setting() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(Sync_Setting.class.getResource("/sync/icons/small setting.png")));
-		setBounds(100, 100, 450, 300);
+		setTitle("Synchronisation");
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\DELL\\eclipse-workspace\\Comparaison-Dossier\\src\\sync\\icons\\104952_mac-gadgets-on-a-desk-wallpapers-free-desktop-backgrounds-and_800x600_h.png"));
+		setBounds(100, 100, 569, 428);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -57,14 +60,15 @@ public class Sync_Setting extends JDialog {
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(UIManager.getColor("Button.background"));
-		panel.setBounds(10, 11, 414, 218);
+		panel.setBounds(0, 0, 555, 354);
 		contentPanel.add(panel);
 		panel.setLayout(null);
 		
 		JLabel lblDirectionOfSynchronization = new JLabel("Sens de la synchronisation:");
+		lblDirectionOfSynchronization.setForeground(Color.WHITE);
 		lblDirectionOfSynchronization.setIcon(new ImageIcon(Sync_Setting.class.getResource("/sync/icons/arrows22.png")));
-		lblDirectionOfSynchronization.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblDirectionOfSynchronization.setBounds(10, 11, 280, 24);
+		lblDirectionOfSynchronization.setFont(new Font("Times New Roman", Font.BOLD, 25));
+		lblDirectionOfSynchronization.setBounds(122, 11, 336, 34);
 		panel.add(lblDirectionOfSynchronization);
 		
 	    left = new JButton("");
@@ -78,7 +82,7 @@ public class Sync_Setting extends JDialog {
 			}
 		});
 		left.setIcon(new ImageIcon(Sync_Setting.class.getResource("/sync/icons/fast-forward333.png")));
-		left.setBounds(20, 46, 39, 40);
+		left.setBounds(80, 76, 47, 46);
 		panel.add(left);
 		
 		right = new JButton("");
@@ -94,130 +98,169 @@ public class Sync_Setting extends JDialog {
 			}
 		});
 		right.setIcon(new ImageIcon(Sync_Setting.class.getResource("/sync/icons/arrows333333.png")));
-		right.setBounds(338, 46, 39, 40);
+		right.setBounds(444, 76, 47, 46);
 		panel.add(right);
 		
 		JLabel lblLeftToRight = new JLabel("gauche \u00E0 droite");
-		lblLeftToRight.setBounds(62, 56, 109, 24);
+		lblLeftToRight.setFont(new Font("Tahoma", Font.ITALIC, 13));
+		lblLeftToRight.setBounds(137, 85, 109, 24);
 		panel.add(lblLeftToRight);
 		
 		JLabel lblRightToLeft = new JLabel("droite \u00E0 gauche");
-		lblRightToLeft.setBounds(237, 56, 96, 24);
+		lblRightToLeft.setFont(new Font("Tahoma", Font.ITALIC, 13));
+		lblRightToLeft.setBounds(338, 85, 96, 24);
 		panel.add(lblRightToLeft);
 		
 		JLabel label = new JLabel("Cat\u00E9gorie :");
-		label.setFont(new Font("Tahoma", Font.BOLD, 11));
-		label.setBounds(10, 97, 72, 25);
+		label.setBackground(Color.WHITE);
+		label.setForeground(Color.WHITE);
+		label.setFont(new Font("MS Gothic", Font.BOLD, 16));
+		label.setBounds(20, 143, 134, 25);
 		panel.add(label);
 		
 		JButton button_2 = new JButton("");
+		button_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		button_2.setIcon(new ImageIcon(Sync_Setting.class.getResource("/sync/icons/cat_right_only.png")));
 		button_2.setToolTipText("Cet \u00E9l\u00E9ment existe seulement a gauche");
-		button_2.setBounds(20, 116, 39, 40);
+		button_2.setBounds(80, 179, 47, 46);
 		panel.add(button_2);
 		
 		JButton button_3 = new JButton("");
+		button_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		button_3.setIcon(new ImageIcon(Sync_Setting.class.getResource("/sync/icons/clock.png")));
 		button_3.setToolTipText("different last modified");
-		button_3.setBounds(179, 116, 39, 40);
+		button_3.setBounds(267, 179, 47, 48);
 		panel.add(button_3);
 		
 		JButton button_4 = new JButton("");
 		button_4.setIcon(new ImageIcon(Sync_Setting.class.getResource("/sync/icons/cat_left_only.png")));
 		button_4.setToolTipText("Cet \u00E9l\u00E9ment existe seulement a droite");
-		button_4.setBounds(338, 116, 39, 40);
+		button_4.setBounds(444, 181, 47, 48);
 		panel.add(button_4);
 		
 		JLabel lblAction = new JLabel("Action :");
-		lblAction.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblAction.setBounds(10, 167, 72, 25);
+		lblAction.setForeground(Color.WHITE);
+		lblAction.setFont(new Font("MS Gothic", Font.BOLD, 16));
+		lblAction.setBounds(22, 241, 72, 25);
 		panel.add(lblAction);
 		
 	    c_left = new JButton("");
+	    c_left.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    	}
+	    });
 		c_left.setIcon(new ImageIcon(Sync_Setting.class.getResource("/sync/icons/so_create_right.png")));
-		c_left.setBounds(81, 168, 40, 39);
+		c_left.setBounds(92, 277, 47, 46);
 		panel.add(c_left);
 		
 		 s_left = new JButton("");
+		 s_left.addActionListener(new ActionListener() {
+		 	public void actionPerformed(ActionEvent e) {
+		 	}
+		 });
 		s_left.setIcon(new ImageIcon(Sync_Setting.class.getResource("/sync/icons/so_delete_right.png")));
-		s_left.setBounds(131, 168, 40, 39);
+		s_left.setBounds(32, 277, 50, 46);
 		panel.add(s_left);
 		
 	    s_right = new JButton("");
+	    s_right.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    	}
+	    });
 		s_right.setIcon(new ImageIcon(Sync_Setting.class.getResource("/sync/icons/so_delete_left.png")));
-		s_right.setBounds(237, 168, 40, 39);
+		s_right.setBounds(421, 277, 50, 46);
 		panel.add(s_right);
 		
 		c_right = new JButton("");
+		c_right.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		c_right.setIcon(new ImageIcon(Sync_Setting.class.getResource("/sync/icons/so_create_left.png")));
-		c_right.setBounds(287, 167, 40, 39);
+		c_right.setBounds(481, 277, 50, 46);
 		panel.add(c_right);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\DELL\\Desktop\\1.png"));
+		lblNewLabel.setBounds(-103, -144, 668, 506);
+		panel.add(lblNewLabel);
 		{
 			JPanel buttonPane = new JPanel();
+			buttonPane.setBounds(2, 353, 553, 56);
+			contentPanel.add(buttonPane);
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
-			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
-				JButton okButton = new JButton("OK");
-				okButton.setToolTipText("confirmer votre param\u00E9tres");
-				okButton.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						DefaultTableModel model4;
-						model4=(DefaultTableModel) Aplication.tab3.getModel();
-					if(modif){	
-						if(!(v_right)){
-							Aplication.sup_droit.setEnabled(true);
-							Aplication.droit_gauche.setEnabled(true);
-							Aplication.sup_gauche.setEnabled(false);
-							Aplication.gauche_droit.setEnabled(false);
-							
+				{
+					JButton cancelButton = new JButton("Cancel");
+					cancelButton.setFont(new Font("Roboto Slab SemiBold", Font.BOLD | Font.ITALIC, 12));
+					cancelButton.setBackground(Color.RED);
+					cancelButton.setToolTipText("annuler");
+					cancelButton.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
+							dispose();
+						}
+					});
+					JButton okButton = new JButton("OK");
+					okButton.setFont(new Font("Roboto Slab SemiBold", Font.BOLD | Font.ITALIC, 12));
+					okButton.setBackground(Color.GREEN);
+					okButton.setToolTipText("confirmer votre param\u00E9tres");
+					okButton.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
+							DefaultTableModel model4;
+							model4=(DefaultTableModel) Aplication.tab3.getModel();
+						if(modif){	
+							if(!(v_right)){
+								Aplication.sup_droit.setEnabled(true);
+								Aplication.droit_gauche.setEnabled(true);
+								Aplication.sup_gauche.setEnabled(false);
+								Aplication.gauche_droit.setEnabled(false);
+								
+							}
+							else{
+								Aplication.sup_gauche.setEnabled(true);
+								Aplication.gauche_droit.setEnabled(true);
+								Aplication.sup_droit.setEnabled(false);
+								Aplication.droit_gauche.setEnabled(false);
+							}
+						}
+						if(Aplication.gauche_droit.isEnabled()){
+							for (int i=0;i<Aplication.tab3.getRowCount();i++){
+								if(Aplication.tab3.getValueAt(i, 1).toString().equals("file:/C:/Users/DOC/workspace/Project/bin/sync/icons/so_update_right_small.png")){
+									Aplication.tab3.setValueAt(Boolean.TRUE, i, 0);
+								}
+								else{
+									Aplication.tab3.setValueAt(Boolean.FALSE, i, 0);
+									Aplication.tab3.setValueAt(Boolean.FALSE, i, 2);
+								}
+							}
 						}
 						else{
-							Aplication.sup_gauche.setEnabled(true);
-							Aplication.gauche_droit.setEnabled(true);
-							Aplication.sup_droit.setEnabled(false);
-							Aplication.droit_gauche.setEnabled(false);
-						}
-					}
-					if(Aplication.gauche_droit.isEnabled()){
-						for (int i=0;i<Aplication.tab3.getRowCount();i++){
-							if(Aplication.tab3.getValueAt(i, 1).toString().equals("file:/C:/Users/DOC/workspace/Project/bin/sync/icons/so_update_right_small.png")){
-								Aplication.tab3.setValueAt(Boolean.TRUE, i, 0);
-							}
-							else{
-								Aplication.tab3.setValueAt(Boolean.FALSE, i, 0);
-								Aplication.tab3.setValueAt(Boolean.FALSE, i, 2);
+							for (int i=0;i<Aplication.tab3.getRowCount();i++){
+								if(Aplication.tab3.getValueAt(i, 1).toString().equals("file:/C:/Users/DOC/workspace/Project/bin/sync/icons/so_update_right_small.png")){
+									Aplication.tab3.setValueAt(Boolean.FALSE, i, 0);
+									Aplication.tab3.setValueAt(Boolean.FALSE, i, 2);
+								}
+								else{
+									Aplication.tab3.setValueAt(Boolean.TRUE, i, 0);
+								}
 							}
 						}
-					}
-					else{
-						for (int i=0;i<Aplication.tab3.getRowCount();i++){
-							if(Aplication.tab3.getValueAt(i, 1).toString().equals("file:/C:/Users/DOC/workspace/Project/bin/sync/icons/so_update_right_small.png")){
-								Aplication.tab3.setValueAt(Boolean.FALSE, i, 0);
-								Aplication.tab3.setValueAt(Boolean.FALSE, i, 2);
-							}
-							else{
-								Aplication.tab3.setValueAt(Boolean.TRUE, i, 0);
-							}
-						}
-					}
-					dispose();
-					
-					}
-				});
-				okButton.setActionCommand("OK");
-				buttonPane.add(okButton);
-				getRootPane().setDefaultButton(okButton);
-			}
-			{
-				JButton cancelButton = new JButton("Cancel");
-				cancelButton.setToolTipText("annuler");
-				cancelButton.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
 						dispose();
-					}
-				});
-				cancelButton.setActionCommand("Cancel");
-				buttonPane.add(cancelButton);
+						
+						}
+					});
+					okButton.setActionCommand("OK");
+					buttonPane.add(okButton);
+					getRootPane().setDefaultButton(okButton);
+					cancelButton.setActionCommand("Cancel");
+					buttonPane.add(cancelButton);
+				}
 			}
 		}
 	}
