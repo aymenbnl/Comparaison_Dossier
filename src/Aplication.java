@@ -360,7 +360,7 @@ public class Aplication extends JFrame implements ActionListener{
 		        }
                 }
                 else{         // les repertoires Vous avez choisi est incorrect
-                	JOptionPane.showMessageDialog(null,"Vous avez sélectionner des faux dossiers/fichiers ","Attention",0);
+                	JOptionPane.showMessageDialog(null,"Vous avez selectionner des faux dossiers/fichiers ","Attention",0);
                 	}
 		}
 		}
@@ -381,10 +381,10 @@ public class Aplication extends JFrame implements ActionListener{
 				int taile1= tab.getRowCount();
 				int taile2= tab2.getRowCount();
 				if ((taile1==0)&&(taile2==0)){
-					JOptionPane.showMessageDialog(null,"Aucun fichier/dossier à Synchroniser ","Attention",0);		
+					JOptionPane.showMessageDialog(null,"Aucun fichier/dossier ï¿½ Synchroniser ","Attention",0);		
 					}
 			   	else{
-			   		//copier les fichiers à partir de la gauche si le sens de la synchronisation des fichiers à partir de gauche a droite 
+			   		//copier les fichiers ï¿½ partir de la gauche si le sens de la synchronisation des fichiers ï¿½ partir de gauche a droite 
 			   		if(gauche_droit.isEnabled()){          
 			   		for(int i =0;i<tab.getRowCount();i++){
 			   			if(tab3.getValueAt(i, 0).toString()=="true"){
@@ -424,7 +424,7 @@ public class Aplication extends JFrame implements ActionListener{
 			   		
 			   		}
 			   		}
-			   	//copier les fichiers à partir de la droite si le sens de la synchronisation des fichiers à partir de gauche a droite 
+			   	//copier les fichiers ï¿½ partir de la droite si le sens de la synchronisation des fichiers ï¿½ partir de gauche a droite 
 			   		if(droit_gauche.isEnabled()){
 					for(int i =0;i<tab2.getRowCount();i++){
 			   			if(tab3.getValueAt(i, 0).toString()=="true"){
@@ -605,7 +605,7 @@ public class Aplication extends JFrame implements ActionListener{
 		Parcourir2.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		Parcourir2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				fc2.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);      ////sélectionner seulement les repertoire
+				fc2.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);      ////sï¿½lectionner seulement les repertoire
 				fc2.setApproveButtonText("Select Folder");
 				if(fc2.showOpenDialog(null)==JFileChooser.APPROVE_OPTION){
 					tf2.setText(fc2.getSelectedFile().getAbsolutePath());
@@ -805,7 +805,7 @@ public class Aplication extends JFrame implements ActionListener{
 	    
 	    JLabel lblNewLabel = new JLabel("New label");
 	    lblNewLabel.setBackground(Color.GRAY);
-	    lblNewLabel.setIcon(new ImageIcon(Aplication.class.getResource("/sync/icons/doosier.jpg")));
+	    lblNewLabel.setIcon(new ImageIcon(Aplication.class.getResource("/sync/icons/12-Courses-for-Starting-Your-Web-Development-Journey.jpg")));
 	    lblNewLabel.setBounds(-99, -319, 1140, 860);
 	    contentPane.add(lblNewLabel);
 	}

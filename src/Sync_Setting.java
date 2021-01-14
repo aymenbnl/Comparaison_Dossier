@@ -64,11 +64,11 @@ public class Sync_Setting extends JDialog {
 		contentPanel.add(panel);
 		panel.setLayout(null);
 		
-		JLabel lblDirectionOfSynchronization = new JLabel("Sens de la synchronisation:");
+		JLabel lblDirectionOfSynchronization = new JLabel("synchronisation :");
 		lblDirectionOfSynchronization.setForeground(Color.WHITE);
 		lblDirectionOfSynchronization.setIcon(new ImageIcon(Sync_Setting.class.getResource("/sync/icons/arrows22.png")));
 		lblDirectionOfSynchronization.setFont(new Font("Times New Roman", Font.BOLD, 25));
-		lblDirectionOfSynchronization.setBounds(122, 11, 336, 34);
+		lblDirectionOfSynchronization.setBounds(177, 11, 278, 34);
 		panel.add(lblDirectionOfSynchronization);
 		
 	    left = new JButton("");
@@ -82,7 +82,7 @@ public class Sync_Setting extends JDialog {
 			}
 		});
 		left.setIcon(new ImageIcon(Sync_Setting.class.getResource("/sync/icons/fast-forward333.png")));
-		left.setBounds(80, 76, 47, 46);
+		left.setBounds(80, 86, 47, 46);
 		panel.add(left);
 		
 		right = new JButton("");
@@ -98,22 +98,22 @@ public class Sync_Setting extends JDialog {
 			}
 		});
 		right.setIcon(new ImageIcon(Sync_Setting.class.getResource("/sync/icons/arrows333333.png")));
-		right.setBounds(444, 76, 47, 46);
+		right.setBounds(444, 86, 47, 46);
 		panel.add(right);
 		
 		JLabel lblLeftToRight = new JLabel("gauche \u00E0 droite");
 		lblLeftToRight.setFont(new Font("Tahoma", Font.ITALIC, 13));
-		lblLeftToRight.setBounds(137, 85, 109, 24);
+		lblLeftToRight.setBounds(137, 98, 109, 24);
 		panel.add(lblLeftToRight);
 		
 		JLabel lblRightToLeft = new JLabel("droite \u00E0 gauche");
 		lblRightToLeft.setFont(new Font("Tahoma", Font.ITALIC, 13));
-		lblRightToLeft.setBounds(338, 85, 96, 24);
+		lblRightToLeft.setBounds(338, 98, 96, 24);
 		panel.add(lblRightToLeft);
 		
 		JLabel label = new JLabel("Cat\u00E9gorie :");
 		label.setBackground(Color.WHITE);
-		label.setForeground(Color.WHITE);
+		label.setForeground(Color.BLACK);
 		label.setFont(new Font("MS Gothic", Font.BOLD, 16));
 		label.setBounds(20, 143, 134, 25);
 		panel.add(label);
@@ -123,6 +123,12 @@ public class Sync_Setting extends JDialog {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
+		
+		JLabel lblNewLabel_1 = new JLabel("Sens de la synchronisation:");
+		lblNewLabel_1.setForeground(Color.BLACK);
+		lblNewLabel_1.setFont(new Font("MS Gothic", Font.BOLD, 16));
+		lblNewLabel_1.setBounds(20, 61, 278, 14);
+		panel.add(lblNewLabel_1);
 		button_2.setIcon(new ImageIcon(Sync_Setting.class.getResource("/sync/icons/cat_right_only.png")));
 		button_2.setToolTipText("Cet \u00E9l\u00E9ment existe seulement a gauche");
 		button_2.setBounds(80, 179, 47, 46);
@@ -145,7 +151,7 @@ public class Sync_Setting extends JDialog {
 		panel.add(button_4);
 		
 		JLabel lblAction = new JLabel("Action :");
-		lblAction.setForeground(Color.WHITE);
+		lblAction.setForeground(Color.BLACK);
 		lblAction.setFont(new Font("MS Gothic", Font.BOLD, 16));
 		lblAction.setBounds(22, 241, 72, 25);
 		panel.add(lblAction);
@@ -187,7 +193,7 @@ public class Sync_Setting extends JDialog {
 		panel.add(c_right);
 		
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\DELL\\Desktop\\1.png"));
+		lblNewLabel.setIcon(new ImageIcon(Sync_Setting.class.getResource("/sync/icons/1.png")));
 		lblNewLabel.setBounds(-103, -144, 668, 506);
 		panel.add(lblNewLabel);
 		{
