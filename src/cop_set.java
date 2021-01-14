@@ -11,6 +11,10 @@ import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
+import javax.swing.JTable;
+import java.awt.Label;
+import java.awt.Color;
+import javax.swing.SwingConstants;
 
 public class cop_set extends JDialog {
     static boolean chang=Aplication.size;
@@ -34,32 +38,38 @@ public class cop_set extends JDialog {
 	 * Create the dialog.
 	 */
 	public cop_set() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(cop_set.class.getResource("/sync/icons/105690211025884527.png")));
-		setBounds(100, 100, 450, 300);
+		setBackground(new Color(255, 255, 255));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\AMEL\\Desktop\\calendriepng.png"));
+		setBounds(100, 100, 811, 524);
 		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBackground(new Color(255, 182, 193));
+		contentPanel.setForeground(new Color(165, 42, 42));
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 		
-		JLabel lblChoisirUneVariante = new JLabel("Choisir une variante :");
-		lblChoisirUneVariante.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblChoisirUneVariante.setBounds(10, 28, 128, 14);
+		JLabel lblChoisirUneVariante = new JLabel("------Choisir une variante-------");
+		lblChoisirUneVariante.setForeground(new Color(220, 20, 60));
+		lblChoisirUneVariante.setFont(new Font("Comic Sans MS", Font.BOLD | Font.ITALIC, 18));
+		lblChoisirUneVariante.setBounds(249, 21, 303, 39);
 		contentPanel.add(lblChoisirUneVariante);
-		
-		final JLabel date = new JLabel("");
-		date.setIcon(new ImageIcon(cop_set.class.getResource("/sync/icons/clock.png")));
-		date.setBounds(10, 53, 39, 35);
-		date.setEnabled(!chang);
-		contentPanel.add(date);
 		
 		final JLabel size = new JLabel("");
 		size.setEnabled(false);
-		size.setIcon(new ImageIcon(cop_set.class.getResource("/sync/icons/cmpByContent.png")));
-		size.setBounds(10, 109, 39, 35);
+		size.setIcon(new ImageIcon("C:\\Users\\AMEL\\Desktop\\calendrier2).jfif"));
+		size.setBounds(458, 33, 293, 275);
 		size.setEnabled(chang);
 		contentPanel.add(size);
 		
+		final JLabel date = new JLabel("");
+		date.setBackground(new Color(0, 0, 0));
+		date.setIcon(new ImageIcon("C:\\Users\\AMEL\\Desktop\\taille5.jfif"));
+		date.setBounds(22, 10, 558, 294);
+		date.setEnabled(!chang);
+		contentPanel.add(date);
+		
 		JButton btnNewButton = new JButton("Date du fichier");
+		btnNewButton.setBackground(new Color(0, 0, 0));
 		btnNewButton.setToolTipText("reconna\u00EEtre les fichiers identiques \u00E0 l'aide leur date");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -77,11 +87,13 @@ public class cop_set extends JDialog {
 				chang=!chang;
 			}
 		});
-		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btnNewButton.setBounds(59, 63, 121, 23);
+		btnNewButton.setFont(new Font("Comic Sans MS", Font.BOLD | Font.ITALIC, 17));
+		btnNewButton.setBounds(458, 284, 293, 54);
 		contentPanel.add(btnNewButton);
 		
 		JButton btnTailleDuFichier = new JButton("Taille du fichier");
+		btnTailleDuFichier.setForeground(new Color(0, 0, 0));
+		btnTailleDuFichier.setBackground(new Color(0, 0, 0));
 		btnTailleDuFichier.setToolTipText("reconna\u00EEtre les fichiers identiques \u00E0 l'aide leur taille");
 		btnTailleDuFichier.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -98,20 +110,26 @@ public class cop_set extends JDialog {
 				chang=!chang;
 			}
 		});
-		btnTailleDuFichier.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btnTailleDuFichier.setBounds(59, 121, 121, 23);
+		btnTailleDuFichier.setFont(new Font("Comic Sans MS", Font.BOLD | Font.ITALIC, 17));
+		btnTailleDuFichier.setBounds(32, 284, 244, 54);
 		contentPanel.add(btnTailleDuFichier);
 		
-	   tex = new JLabel("Reconna\u00EEtre les fichiers identiques \u00E0 l'aide de leur taille et de leur date.");
-		tex.setFont(new Font("Tahoma", Font.BOLD, 11));
-		tex.setBounds(10, 190, 414, 14);
+	   tex = new JLabel("**Reconna\u00EEtre les fichiers identiques \u00E0 l'aide de leur taille et de leur date* *");
+		tex.setFont(new Font("Comic Sans MS", Font.BOLD | Font.ITALIC, 15));
+		tex.setBounds(89, 358, 644, 76);
 		contentPanel.add(tex);
 		{
 			JPanel buttonPane = new JPanel();
+			buttonPane.setBackground(new Color(255, 182, 193));
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
 				JButton okButton = new JButton("OK");
+				okButton.setVerticalAlignment(SwingConstants.TOP);
+				okButton.setForeground(new Color(0, 0, 0));
+				okButton.setFont(new Font("Trebuchet MS", Font.BOLD | Font.ITALIC, 12));
+				okButton.setBackground(new Color(255, 182, 193));
+				okButton.setIcon(new ImageIcon(cop_set.class.getResource("/sync/icons/fast-forward333.png")));
 				okButton.setToolTipText("confirmer votre variante");
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
@@ -120,12 +138,14 @@ public class cop_set extends JDialog {
 						dispose();
 					}
 				});
-				okButton.setActionCommand("OK");
 				buttonPane.add(okButton);
 				getRootPane().setDefaultButton(okButton);
 			}
 			{
 				JButton cancelButton = new JButton("Cancel");
+				cancelButton.setFont(new Font("Trebuchet MS", Font.ITALIC, 14));
+				cancelButton.setBackground(new Color(255, 182, 193));
+				cancelButton.setIcon(new ImageIcon(cop_set.class.getResource("/sync/icons/exit2.png")));
 				cancelButton.setToolTipText("annuler");
 				cancelButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
