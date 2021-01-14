@@ -184,12 +184,13 @@ public class Aplication extends JFrame implements ActionListener{
 		setContentPane(contentPane);
 		contentPane.setLayout(null);		
 		JPanel panel = new JPanel();
-		panel.setBackground(Color.WHITE);
+		panel.setBackground(new Color(255, 255, 255));
 		panel.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		panel.setBounds(167, 11, 675, 54);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		JButton comparer = new JButton("Comparer");
+		comparer.setBackground(new Color(255, 255, 255));
 		comparer.setToolTipText("Comparer");
 
 		//Compare button Action 
@@ -201,7 +202,7 @@ public class Aplication extends JFrame implements ActionListener{
     			rep_2.setText(Integer.toString(nb_rep)+"Repertoire");
     			fcoun_1.setText(Integer.toString(nb_file)+"File");
     			repcount_1.setText(Integer.toString(nb_rep)+"Repertoire");
-				if(new File(tf.getText()).exists()&& new File(tf2.getText()).exists() ){//vï¿½rifier si les repertoires Vous avez choisi est correct
+				if(new File(tf.getText()).exists()&& new File(tf2.getText()).exists() ){//verifier si les repertoires Vous avez choisi est correct
 				model.setRowCount(0);
 				model2.setRowCount(0);
 				model4=(DefaultTableModel) tab3.getModel();
@@ -215,16 +216,16 @@ public class Aplication extends JFrame implements ActionListener{
 				LinkedList<File> fs=new LinkedList<File>();
 				File file2=new File(tf2.getText());
 				LinkedList<File> fs2=new LinkedList<>();
-                if(tf.getText().equals("")||tf2.getText().equals("")){          //vï¿½rifier si Vous avez selectioner 2 repertoires ou non 
+                if(tf.getText().equals("")||tf2.getText().equals("")){          //verifier si Vous avez selectioner 2 repertoires ou non 
                 	JOptionPane.showMessageDialog(null,"select the files you want to compare ","Attention",0);
                 }
                 else{
-				if (tf.getText().equals(tf2.getText())){                //vï¿½rifier si Vous avez selectionner le meme rep
+				if (tf.getText().equals(tf2.getText())){                //verifier si Vous avez selectionner le meme rep
 					JOptionPane.showMessageDialog(null,"you selected the same file :"+tf.getText()+"\n"+tf2.getText(),"Attention",0);
 					}
 					else{
 			
-					for(File f:file.listFiles()){                //mettre le contenu de le 1ere rï¿½pertoire dans une list
+					for(File f:file.listFiles()){                //mettre le contenu de le 1ere repertoire dans une list
 					if(!(f.getName().equals(new File(tf2.getText()).getName()))){	
 		  
 					      fs.add(f);
@@ -242,12 +243,12 @@ public class Aplication extends JFrame implements ActionListener{
 			        }
 					  tab2.setModel(model2);  
 					fs.clear();
-					for(File f2:file2.listFiles()){                    // //mettre le contenu de le 2eme rï¿½pertoire dans une list
+					for(File f2:file2.listFiles()){                     //mettre le contenu de le 2eme repertoire dans une list
 						if(!(f2.getName().equals(new File(tf.getText()).getName()))){	
 						fs2.add(f2);
 						}
 						}
-					tab2.setModel( CustomModel.getModel(fs2,file,model2));     //aficher les fichiers/dossiers existe dans le 2eme rep et n'existe past dans le 1ere
+					tab2.setModel( CustomModel.getModel(fs2,file,model2));     //afficher les fichiers/dossiers existe dans le 2eme rep et n'existe past dans le 1ere
 					fs2.clear();
 					  if(tab.getRowCount()<=tab2.getRowCount()){         
 				        	ts=tab2.getRowCount();
@@ -308,7 +309,7 @@ public class Aplication extends JFrame implements ActionListener{
 					        
 					   
 				        Object [] ro =  new Object[3] ;
-				        DefaultTableModel model5 =(DefaultTableModel) tab.getModel();   //model5 pour aficher des lignes vide dans le 1ere tab
+				        DefaultTableModel model5 =(DefaultTableModel) tab.getModel();   //modele pour afficher des lignes vide dans le 1ere tab
 				        for(int i=0;i<tab2.getRowCount();i++){
 				        	if(!(i<tab.getRowCount())){
 				        	ro[0]=null;
@@ -337,7 +338,7 @@ public class Aplication extends JFrame implements ActionListener{
 					repcount_1.setText(Integer.toString(nbr)+"Repertoire");
 				}
 				
-				if(!(tab2.getRowCount()==0)){      //determiner le nombre des fichiers est les repertoire dans le 2eme tab
+				if(!(tab2.getRowCount()==0)){      //determiner le nombre des fichiers est les repertoires dans le 2eme tab
 					int nbf=0;
 					int nbr=0;
 					file_2.setVisible(true);
@@ -358,8 +359,8 @@ public class Aplication extends JFrame implements ActionListener{
 				}
 		        }
                 }
-                else{         // les rï¿½pertoires Vous avez choisi est incorrect
-                	JOptionPane.showMessageDialog(null,"vous avez sï¿½lectionnï¿½ des faux fichiers","Attention",0);
+                else{         // les repertoires Vous avez choisi est incorrect
+                	JOptionPane.showMessageDialog(null,"Vous avez sélectionner des faux dossiers/fichiers ","Attention",0);
                 	}
 		}
 		}
@@ -367,10 +368,11 @@ public class Aplication extends JFrame implements ActionListener{
 				);
 		comparer.setIcon(new ImageIcon(Aplication.class.getResource("/sync/icons/105690211025884527.png")));
 		comparer.setFont(new Font("Segoe UI", Font.BOLD, 16));
-		comparer.setBounds(26, 11, 186, 39);
+		comparer.setBounds(113, 11, 186, 39);
 		panel.add(comparer);
 		
 		JButton btnSynchronise = new JButton("Synchroniser");
+		btnSynchronise.setBackground(new Color(255, 255, 255));
 		btnSynchronise.setToolTipText("Synchroniser");
 		
 		//Sync button action
@@ -379,10 +381,10 @@ public class Aplication extends JFrame implements ActionListener{
 				int taile1= tab.getRowCount();
 				int taile2= tab2.getRowCount();
 				if ((taile1==0)&&(taile2==0)){
-					JOptionPane.showMessageDialog(null,"aucun fichier ï¿½ Synchroniser ");	
+					JOptionPane.showMessageDialog(null,"Aucun fichier/dossier à Synchroniser ","Attention",0);		
 					}
 			   	else{
-			   		//copier les fichiers ï¿½ partir de la gauche si le sens de la synchronisation des fichiers ï¿½ partir de gauche a droite 
+			   		//copier les fichiers à partir de la gauche si le sens de la synchronisation des fichiers à partir de gauche a droite 
 			   		if(gauche_droit.isEnabled()){          
 			   		for(int i =0;i<tab.getRowCount();i++){
 			   			if(tab3.getValueAt(i, 0).toString()=="true"){
@@ -422,7 +424,7 @@ public class Aplication extends JFrame implements ActionListener{
 			   		
 			   		}
 			   		}
-			   	//copier les fichiers ï¿½ partir de la droite si le sens de la synchronisation des fichiers ï¿½ partir de gauche a droite 
+			   	//copier les fichiers à partir de la droite si le sens de la synchronisation des fichiers à partir de gauche a droite 
 			   		if(droit_gauche.isEnabled()){
 					for(int i =0;i<tab2.getRowCount();i++){
 			   			if(tab3.getValueAt(i, 0).toString()=="true"){
@@ -462,7 +464,7 @@ public class Aplication extends JFrame implements ActionListener{
 			   		
 			   		}
 			   	}	
-			   	//la suprision des fichers
+			   	//la supression des fichers
 			   		if(sup_gauche.isEnabled()){
 			   		Sync.del_file(tab, tab3);
 			   		}
@@ -492,7 +494,7 @@ public class Aplication extends JFrame implements ActionListener{
 		
 		JButton button_3 = new JButton("");
 		
-		//Sync setting button action
+		//Synchronisation setting button action
 		button_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new Sync_Setting().setVisible(true);
@@ -504,7 +506,7 @@ public class Aplication extends JFrame implements ActionListener{
 		panel.add(button_3);		
 		
 		JButton button = new JButton("");
-		//paramï¿½tre de comparï¿½ button action
+		//parametre de comparaison button action
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			new cop_set().setVisible(true);	
@@ -512,9 +514,10 @@ public class Aplication extends JFrame implements ActionListener{
 		});
 		button.setIcon(new ImageIcon(Aplication.class.getResource("/sync/icons/settings-work-tool1.png")));
 		button.setToolTipText("Comparaison Param\u00E9tres");
-		button.setBounds(242, 11, 40, 39);
+		button.setBounds(40, 11, 40, 39);
 		panel.add(button);
 		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(new Color(255, 255, 255));
 		panel_1.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		panel_1.setBounds(167, 76, 675, 60);
 		contentPane.add(panel_1);
@@ -590,18 +593,19 @@ public class Aplication extends JFrame implements ActionListener{
 		Change.setBounds(316, 8, 43, 49);
 		panel_1.add(Change);
 		
-		JLabel lab1 = new JLabel("Glisser & D\u00E9poser");
+		JLabel lab1 = new JLabel("Ajouter un Dossier");
 		lab1.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		lab1.setBounds(59, 8, 114, 14);
 		panel_1.add(lab1);
 		
 		//Parcourir button action 
 		JButton Parcourir2 = new JButton("Parcourir");
+		Parcourir2.setBackground(new Color(255, 255, 255));
 		Parcourir2.setToolTipText("S\u00E9lectionner le 2eme dossier");
 		Parcourir2.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		Parcourir2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				fc2.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);      ////selectionner seulement les repertoire
+				fc2.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);      ////sélectionner seulement les repertoire
 				fc2.setApproveButtonText("Select Folder");
 				if(fc2.showOpenDialog(null)==JFileChooser.APPROVE_OPTION){
 					tf2.setText(fc2.getSelectedFile().getAbsolutePath());
@@ -611,12 +615,13 @@ public class Aplication extends JFrame implements ActionListener{
 		Parcourir2.setBounds(569, 25, 96, 23);
 		panel_1.add(Parcourir2);
 		
-		JLabel lblDragDrob = new JLabel("Glisser & D\u00E9poser");
+		JLabel lblDragDrob = new JLabel("Ajouter un Dossier");
 		lblDragDrob.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		lblDragDrob.setBounds(410, 8, 125, 14);
 		panel_1.add(lblDragDrob);
 		
 		JButton btnBrowse = new JButton("Parcourir");
+		btnBrowse.setBackground(new Color(255, 255, 255));
 		btnBrowse.setToolTipText("S\u00E9lectionner le 1ere dossier");
 		btnBrowse.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		
@@ -761,7 +766,7 @@ public class Aplication extends JFrame implements ActionListener{
 	    droit_gauche.setIcon(new ImageIcon(Aplication.class.getResource("/sync/icons/so_create_left.png")));
 	    
 	    JPanel panel_5 = new JPanel();
-	    panel_5.setBackground(UIManager.getColor("Button.background"));
+	    panel_5.setBackground(new Color(255, 255, 255));
 	    panel_5.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 	    panel_5.setBounds(137, 453, 215, 44);
 	    contentPane.add(panel_5);
@@ -780,7 +785,7 @@ public class Aplication extends JFrame implements ActionListener{
 	    panel_5.add(repcount_1);
 	    
 	    JPanel panel_6 = new JPanel();
-	    panel_6.setBackground(UIManager.getColor("Button.background"));
+	    panel_6.setBackground(new Color(255, 255, 255));
 	    panel_6.setLayout(null);
 	    panel_6.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 	    panel_6.setBounds(684, 453, 224, 44);
@@ -799,7 +804,8 @@ public class Aplication extends JFrame implements ActionListener{
 	    panel_6.add(rep_2);
 	    
 	    JLabel lblNewLabel = new JLabel("New label");
-	    lblNewLabel.setIcon(new ImageIcon("C:\\Users\\DELL\\Desktop\\12-Courses-for-Starting-Your-Web-Development-Journey.jpg"));
+	    lblNewLabel.setBackground(Color.GRAY);
+	    lblNewLabel.setIcon(new ImageIcon(Aplication.class.getResource("/sync/icons/doosier.jpg")));
 	    lblNewLabel.setBounds(-99, -319, 1140, 860);
 	    contentPane.add(lblNewLabel);
 	}
