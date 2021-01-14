@@ -101,10 +101,10 @@ public class Aplication extends JFrame implements ActionListener{
 	 * 
 	 */
 	public Aplication() {
-		setTitle("Synchronisation");
+		setTitle("Comparaison_Dossier");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 801, 595);
+		setBounds(100, 100, 1047, 592);
 		this.setLocationRelativeTo(null);		
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBackground(SystemColor.control);
@@ -186,7 +186,7 @@ public class Aplication extends JFrame implements ActionListener{
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.WHITE);
 		panel.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		panel.setBounds(10, 11, 615, 54);
+		panel.setBounds(167, 11, 675, 54);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		JButton comparer = new JButton("Comparer");
@@ -487,7 +487,7 @@ public class Aplication extends JFrame implements ActionListener{
 		);
 		btnSynchronise.setIcon(new ImageIcon(Aplication.class.getResource("/sync/icons/synchronization-arrows-couple22.png")));
 		btnSynchronise.setFont(new Font("Segoe UI", Font.BOLD, 16));
-		btnSynchronise.setBounds(405, 11, 186, 39);
+		btnSynchronise.setBounds(467, 11, 186, 39);
 		panel.add(btnSynchronise);
 		
 		JButton button_3 = new JButton("");
@@ -500,7 +500,7 @@ public class Aplication extends JFrame implements ActionListener{
 		});
 		button_3.setToolTipText("Synchronisation Param\u00E9tres");
 		button_3.setIcon(new ImageIcon(Aplication.class.getResource("/sync/icons/settings-work-tool22.png")));
-		button_3.setBounds(326, 11, 40, 39);
+		button_3.setBounds(399, 11, 40, 39);
 		panel.add(button_3);		
 		
 		JButton button = new JButton("");
@@ -516,7 +516,7 @@ public class Aplication extends JFrame implements ActionListener{
 		panel.add(button);
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		panel_1.setBounds(10, 76, 615, 60);
+		panel_1.setBounds(167, 76, 675, 60);
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 		
@@ -587,7 +587,7 @@ public class Aplication extends JFrame implements ActionListener{
 			}
 		});
 		Change.setIcon(new ImageIcon(Aplication.class.getResource("/sync/icons/exchange-arrows.png")));
-		Change.setBounds(282, 8, 43, 49);
+		Change.setBounds(316, 8, 43, 49);
 		panel_1.add(Change);
 		
 		JLabel lab1 = new JLabel("Glisser & D\u00E9poser");
@@ -608,12 +608,12 @@ public class Aplication extends JFrame implements ActionListener{
 				}
 			}
 		});
-		Parcourir2.setBounds(488, 25, 96, 23);
+		Parcourir2.setBounds(569, 25, 96, 23);
 		panel_1.add(Parcourir2);
 		
 		JLabel lblDragDrob = new JLabel("Glisser & D\u00E9poser");
 		lblDragDrob.setFont(new Font("Segoe UI", Font.BOLD, 12));
-		lblDragDrob.setBounds(362, 8, 125, 14);
+		lblDragDrob.setBounds(410, 8, 125, 14);
 		panel_1.add(lblDragDrob);
 		
 		JButton btnBrowse = new JButton("Parcourir");
@@ -630,25 +630,25 @@ public class Aplication extends JFrame implements ActionListener{
 				}
 			}
 		});
-		btnBrowse.setBounds(176, 25, 96, 23);
+		btnBrowse.setBounds(210, 25, 96, 23);
 		panel_1.add(btnBrowse);
 		
 		tf = new JTextField();
 		tf.setFont(new Font("Segoe UI", Font.PLAIN, 12));
 		tf.setBackground(Color.WHITE);
-		tf.setBounds(20, 28, 153, 20);
+		tf.setBounds(10, 28, 190, 20);
 		panel_1.add(tf);
 		tf.setColumns(10);	
 		tf2 = new JTextField();
 		tf2.setFont(new Font("Segoe UI", Font.PLAIN, 12));
 		tf2.setColumns(10);
-		tf2.setBounds(335, 26, 153, 20);
+		tf2.setBounds(369, 26, 190, 20);
 		panel_1.add(tf2);
 		model2.setColumnIdentifiers(col2);
 		JPanel panel_2 = new JPanel();
 		panel_2.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panel_2.setBackground(Color.WHITE);
-		panel_2.setBounds(10, 147, 237, 280);
+		panel_2.setBounds(10, 147, 268, 280);
 		contentPane.add(panel_2);
 		panel_2.setLayout(new GridLayout(1, 0, 0, 0));
 		
@@ -676,7 +676,7 @@ public class Aplication extends JFrame implements ActionListener{
 		model.setColumnIdentifiers(col);
 		JPanel panel_3 = new JPanel();
 		panel_3.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_3.setBounds(403, 147, 237, 280);
+		panel_3.setBounds(747, 147, 273, 280);
 		contentPane.add(panel_3);
 		panel_3.setLayout(new GridLayout(1, 0, 0, 0));
 		
@@ -725,7 +725,7 @@ public class Aplication extends JFrame implements ActionListener{
 	    model4=(DefaultTableModel) tab3.getModel();
 	    JPanel panel_4 = new JPanel();
 	    panel_4.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-	    panel_4.setBounds(248, 147, 150, 280);
+	    panel_4.setBounds(288, 147, 449, 280);
 	    contentPane.add(panel_4);
 	    panel_4.setLayout(new GridLayout(1, 0, 0, 0));
 	    
@@ -736,34 +736,34 @@ public class Aplication extends JFrame implements ActionListener{
 	    
 	    gauche_droit = new JLabel("");
 	    gauche_droit.setToolTipText("copy/create les fichier \u00E0 partir de gauche a droite ");
-	    gauche_droit.setBounds(232, 431, 40, 39);
+	    gauche_droit.setBounds(382, 458, 40, 39);
 	    contentPane.add(gauche_droit);
 	    gauche_droit.setIcon(new ImageIcon(Aplication.class.getResource("/sync/icons/so_create_right.png")));
 	    
 	    sup_gauche = new JLabel("");
 	    sup_gauche.setToolTipText("Suppression de fichiers \u00E0 partir de repertoire gauche");
-	    sup_gauche.setBounds(275, 431, 40, 39);
+	    sup_gauche.setBounds(432, 458, 40, 39);
 	    contentPane.add(sup_gauche);
 	    sup_gauche.setIcon(new ImageIcon(Aplication.class.getResource("/sync/icons/so_delete_right.png")));
 	    
 	    sup_droit = new JLabel("");
 	    sup_droit.setToolTipText("Suppression de fichiers \u00E0 partir de repertoire droite");
 	    sup_droit.setEnabled(false);
-	    sup_droit.setBounds(317, 431, 40, 39);
+	    sup_droit.setBounds(570, 458, 40, 39);
 	    contentPane.add(sup_droit);
 	    sup_droit.setIcon(new ImageIcon(Aplication.class.getResource("/sync/icons/so_delete_left.png")));
 	    
 	    droit_gauche = new JLabel("");
 	    droit_gauche.setToolTipText("copy/create les fichier \u00E0 partir de droite a gauche ");
 	    droit_gauche.setEnabled(false);
-	    droit_gauche.setBounds(358, 431, 40, 39);
+	    droit_gauche.setBounds(620, 458, 40, 39);
 	    contentPane.add(droit_gauche);
 	    droit_gauche.setIcon(new ImageIcon(Aplication.class.getResource("/sync/icons/so_create_left.png")));
 	    
 	    JPanel panel_5 = new JPanel();
 	    panel_5.setBackground(UIManager.getColor("Button.background"));
 	    panel_5.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-	    panel_5.setBounds(10, 431, 215, 44);
+	    panel_5.setBounds(137, 453, 215, 44);
 	    contentPane.add(panel_5);
 	    panel_5.setLayout(null);
 	    
@@ -783,7 +783,7 @@ public class Aplication extends JFrame implements ActionListener{
 	    panel_6.setBackground(UIManager.getColor("Button.background"));
 	    panel_6.setLayout(null);
 	    panel_6.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-	    panel_6.setBounds(401, 431, 224, 44);
+	    panel_6.setBounds(684, 453, 224, 44);
 	    contentPane.add(panel_6);
 	    
 	    file_2 = new JLabel("");
@@ -799,8 +799,8 @@ public class Aplication extends JFrame implements ActionListener{
 	    panel_6.add(rep_2);
 	    
 	    JLabel lblNewLabel = new JLabel("New label");
-	    lblNewLabel.setIcon(new ImageIcon("C:\\Users\\DELL\\Desktop\\1.png"));
-	    lblNewLabel.setBounds(0, 0, 795, 544);
+	    lblNewLabel.setIcon(new ImageIcon("C:\\Users\\DELL\\Desktop\\12-Courses-for-Starting-Your-Web-Development-Journey.jpg"));
+	    lblNewLabel.setBounds(-99, -319, 1140, 860);
 	    contentPane.add(lblNewLabel);
 	}
 
