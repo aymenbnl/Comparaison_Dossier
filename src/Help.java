@@ -46,41 +46,30 @@ public class Help extends JDialog {
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Choisir des r\u00E9pertoires");
+		JLabel lblNewLabel = new JLabel("1) Choisir des r\u00E9pertoires");
 		lblNewLabel.setFont(new Font("Segoe UI", Font.BOLD, 15));
 		lblNewLabel.setBounds(20, 43, 226, 25);
 		contentPanel.add(lblNewLabel);
 		
-		JLabel lblcompareThem = new JLabel("Comparer");
+		JLabel lblcompareThem = new JLabel("2) Comparer");
 		lblcompareThem.setFont(new Font("Segoe UI", Font.BOLD, 15));
-		lblcompareThem.setBounds(87, 154, 85, 35);
+		lblcompareThem.setBounds(20, 154, 168, 35);
 		contentPanel.add(lblcompareThem);
 		
-		JLabel lblSelectSynchronizationSettings = new JLabel("Param\u00E9tres");
+		JLabel lblSelectSynchronizationSettings = new JLabel("3) Param\u00E9tres");
 		lblSelectSynchronizationSettings.setFont(new Font("Segoe UI", Font.BOLD, 15));
-		lblSelectSynchronizationSettings.setBounds(87, 222, 101, 39);
+		lblSelectSynchronizationSettings.setBounds(20, 222, 168, 39);
 		contentPanel.add(lblSelectSynchronizationSettings);
 		
-		JLabel lblPressSynchronizeTo = new JLabel("Synchroniser");
+		JLabel lblPressSynchronizeTo = new JLabel("4) Synchroniser");
 		lblPressSynchronizeTo.setFont(new Font("Segoe UI", Font.BOLD, 15));
-		lblPressSynchronizeTo.setBounds(87, 305, 109, 35);
+		lblPressSynchronizeTo.setBounds(20, 305, 109, 35);
 		contentPanel.add(lblPressSynchronizeTo);
 		
 		JLabel lblBasicUsage = new JLabel("");
 		lblBasicUsage.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblBasicUsage.setBounds(10, 11, 85, 14);
 		contentPanel.add(lblBasicUsage);
-		
-		JPanel panel_2 = new JPanel();
-		panel_2.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_2.setBounds(276, 222, 47, 48);
-		contentPanel.add(panel_2);
-		panel_2.setLayout(new CardLayout(0, 0));
-		
-		JLabel label_2 = new JLabel("");
-		panel_2.add(label_2, "name_5296505302700");
-		label_2.setBackground(Color.GRAY);
-		label_2.setIcon(new ImageIcon(Help.class.getResource("/sync/icons/set_syn.png")));
 		
 		JLabel label = new JLabel("");
 		label.setBounds(10, 79, 531, 64);
@@ -89,16 +78,22 @@ public class Help extends JDialog {
 		label.setIcon(new ImageIcon(Help.class.getResource("/sync/icons/selectionner.png")));
 		
 		JLabel label_1 = new JLabel("");
-		label_1.setBounds(206, 154, 182, 35);
+		label_1.setBounds(141, 154, 182, 35);
 		contentPanel.add(label_1);
 		label_1.setBackground(Color.PINK);
 		label_1.setIcon(new ImageIcon(Help.class.getResource("/sync/icons/comp2.png")));
 		
 		JLabel label_3 = new JLabel("");
-		label_3.setBounds(206, 305, 182, 35);
+		label_3.setBounds(139, 305, 182, 35);
 		contentPanel.add(label_3);
 		label_3.setBackground(Color.PINK);
 		label_3.setIcon(new ImageIcon(Help.class.getResource("/sync/icons/syn2.png")));
+		
+		JLabel label_2 = new JLabel("");
+		label_2.setBounds(156, 217, 43, 44);
+		contentPanel.add(label_2);
+		label_2.setBackground(Color.GRAY);
+		label_2.setIcon(new ImageIcon(Help.class.getResource("/sync/icons/set_syn.png")));
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setBackground(new Color(255, 228, 225));
