@@ -41,28 +41,28 @@ public class Help extends JDialog {
 		setTitle("About");
 		setBounds(100, 100, 583, 422);
 		getContentPane().setLayout(new BorderLayout());
-		contentPanel.setBackground(new Color(255, 248, 220));
+		contentPanel.setBackground(new Color(255, 255, 255));
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Choisir votre r\u00E9pertoires");
-		lblNewLabel.setFont(new Font("Segoe UI", Font.BOLD, 12));
+		lblNewLabel.setFont(new Font("Segoe UI", Font.BOLD, 15));
 		lblNewLabel.setBounds(10, 11, 226, 14);
 		contentPanel.add(lblNewLabel);
 		
 		JLabel lblcompareThem = new JLabel("Comparer");
-		lblcompareThem.setFont(new Font("Segoe UI", Font.BOLD, 12));
+		lblcompareThem.setFont(new Font("Segoe UI", Font.BOLD, 15));
 		lblcompareThem.setBounds(10, 125, 125, 14);
 		contentPanel.add(lblcompareThem);
 		
 		JLabel lblSelectSynchronizationSettings = new JLabel("Choisir votre param\u00E9tres");
-		lblSelectSynchronizationSettings.setFont(new Font("Segoe UI", Font.BOLD, 12));
+		lblSelectSynchronizationSettings.setFont(new Font("Segoe UI", Font.BOLD, 15));
 		lblSelectSynchronizationSettings.setBounds(10, 197, 301, 14);
 		contentPanel.add(lblSelectSynchronizationSettings);
 		
 		JLabel lblPressSynchronizeTo = new JLabel("Synchroniser");
-		lblPressSynchronizeTo.setFont(new Font("Segoe UI", Font.BOLD, 12));
+		lblPressSynchronizeTo.setFont(new Font("Segoe UI", Font.BOLD, 15));
 		lblPressSynchronizeTo.setBounds(10, 272, 274, 14);
 		contentPanel.add(lblPressSynchronizeTo);
 		
@@ -111,7 +111,7 @@ public class Help extends JDialog {
 		label.setIcon(new ImageIcon(Help.class.getResource("/sync/icons/selectionner.png")));
 		{
 			JPanel buttonPane = new JPanel();
-			buttonPane.setBackground(new Color(255, 240, 245));
+			buttonPane.setBackground(new Color(255, 255, 255));
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
