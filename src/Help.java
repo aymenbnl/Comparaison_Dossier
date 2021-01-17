@@ -41,35 +41,27 @@ public class Help extends JDialog {
 		setTitle("About");
 		setBounds(100, 100, 583, 422);
 		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBackground(new Color(255, 248, 220));
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("01-Choisis votre r\u00E9pertoires.");
+		JLabel lblNewLabel = new JLabel("Choisir votre r\u00E9pertoires");
 		lblNewLabel.setFont(new Font("Segoe UI", Font.BOLD, 12));
-		lblNewLabel.setBounds(10, 36, 226, 14);
+		lblNewLabel.setBounds(10, 11, 226, 14);
 		contentPanel.add(lblNewLabel);
 		
-		JPanel panel = new JPanel();
-		panel.setBounds(20, 61, 537, 64);
-		contentPanel.add(panel);
-		panel.setLayout(new GridLayout(1, 0, 0, 0));
-		
-		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon(Help.class.getResource("/sync/icons/selectionner.png")));
-		panel.add(label);
-		
-		JLabel lblcompareThem = new JLabel("02-Comparer.");
+		JLabel lblcompareThem = new JLabel("Comparer");
 		lblcompareThem.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		lblcompareThem.setBounds(10, 125, 125, 14);
 		contentPanel.add(lblcompareThem);
 		
-		JLabel lblSelectSynchronizationSettings = new JLabel("03-Choisir votre parm\u00E9tres.");
+		JLabel lblSelectSynchronizationSettings = new JLabel("Choisir votre param\u00E9tres");
 		lblSelectSynchronizationSettings.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		lblSelectSynchronizationSettings.setBounds(10, 197, 301, 14);
 		contentPanel.add(lblSelectSynchronizationSettings);
 		
-		JLabel lblPressSynchronizeTo = new JLabel("04-Taper Synchroniser. ");
+		JLabel lblPressSynchronizeTo = new JLabel("Synchroniser");
 		lblPressSynchronizeTo.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		lblPressSynchronizeTo.setBounds(10, 272, 274, 14);
 		contentPanel.add(lblPressSynchronizeTo);
@@ -86,6 +78,7 @@ public class Help extends JDialog {
 		panel_1.setLayout(new GridLayout(1, 0, 0, 0));
 		
 		JLabel label_1 = new JLabel("");
+		label_1.setBackground(new Color(255, 255, 255));
 		label_1.setIcon(new ImageIcon(Help.class.getResource("/sync/icons/comp2.png")));
 		panel_1.add(label_1);
 		
@@ -96,6 +89,7 @@ public class Help extends JDialog {
 		panel_2.setLayout(new CardLayout(0, 0));
 		
 		JLabel label_2 = new JLabel("");
+		label_2.setBackground(Color.GRAY);
 		label_2.setIcon(new ImageIcon(Help.class.getResource("/sync/icons/set_syn.png")));
 		panel_2.add(label_2, "name_11271244187530");
 		
@@ -106,14 +100,24 @@ public class Help extends JDialog {
 		panel_3.setLayout(new GridLayout(1, 0, 0, 0));
 		
 		JLabel label_3 = new JLabel("");
+		label_3.setBackground(new Color(255, 255, 255));
 		label_3.setIcon(new ImageIcon(Help.class.getResource("/sync/icons/syn2.png")));
 		panel_3.add(label_3);
+		
+		JLabel label = new JLabel("");
+		label.setBounds(10, 47, 531, 64);
+		contentPanel.add(label);
+		label.setBackground(Color.WHITE);
+		label.setIcon(new ImageIcon(Help.class.getResource("/sync/icons/selectionner.png")));
 		{
 			JPanel buttonPane = new JPanel();
+			buttonPane.setBackground(new Color(255, 240, 245));
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
 				JButton okButton = new JButton("OK");
+				okButton.setForeground(Color.BLACK);
+				okButton.setBackground(Color.PINK);
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						dispose();
