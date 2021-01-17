@@ -593,7 +593,7 @@ public class Aplication extends JFrame implements ActionListener{
 		Change.setBounds(316, 8, 43, 49);
 		panel_1.add(Change);
 		
-		JLabel lab1 = new JLabel("Ajouter un Dossier");
+		JLabel lab1 = new JLabel("Ajouter Dossier");
 		lab1.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		lab1.setBounds(59, 8, 114, 14);
 		panel_1.add(lab1);
@@ -615,7 +615,7 @@ public class Aplication extends JFrame implements ActionListener{
 		Parcourir2.setBounds(569, 25, 96, 23);
 		panel_1.add(Parcourir2);
 		
-		JLabel lblDragDrob = new JLabel("Ajouter un Dossier");
+		JLabel lblDragDrob = new JLabel("Ajouter Dossier");
 		lblDragDrob.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		lblDragDrob.setBounds(410, 8, 125, 14);
 		panel_1.add(lblDragDrob);
