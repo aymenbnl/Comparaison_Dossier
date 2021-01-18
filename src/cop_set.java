@@ -48,28 +48,27 @@ public class cop_set extends JDialog {
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 		
-		JLabel lblChoisirUneVariante = new JLabel("------Choisir une variante-------");
+		JLabel lblChoisirUneVariante = new JLabel("-----Choisir une variante----");
 		lblChoisirUneVariante.setForeground(new Color(220, 20, 60));
 		lblChoisirUneVariante.setFont(new Font("Comic Sans MS", Font.BOLD | Font.ITALIC, 18));
-		lblChoisirUneVariante.setBounds(249, 21, 303, 39);
+		lblChoisirUneVariante.setBounds(260, 10, 303, 39);
 		contentPanel.add(lblChoisirUneVariante);
 		
 		final JLabel size = new JLabel("");
-		size.setEnabled(false);
-		size.setIcon(new ImageIcon("C:\\Users\\AMEL\\Desktop\\calendrier2).jfif"));
-		size.setBounds(458, 33, 293, 275);
-		size.setEnabled(chang);
+		size.setForeground(Color.BLACK);
+		size.setIcon(new ImageIcon(cop_set.class.getResource("/sync/icons/AAimages.png")));
+		size.setBounds(501, 10, 335, 327);
 		contentPanel.add(size);
 		
 		final JLabel date = new JLabel("");
 		date.setBackground(new Color(0, 0, 0));
-		date.setIcon(new ImageIcon("C:\\Users\\AMEL\\Desktop\\taille5.jfif"));
-		date.setBounds(22, 10, 558, 294);
+		date.setIcon(new ImageIcon(cop_set.class.getResource("/sync/icons/calimages.png")));
+		date.setBounds(45, 37, 504, 282);
 		date.setEnabled(!chang);
 		contentPanel.add(date);
 		
 		JButton btnNewButton = new JButton("Date du fichier");
-		btnNewButton.setBackground(new Color(0, 0, 0));
+		btnNewButton.setBackground(Color.WHITE);
 		btnNewButton.setToolTipText("reconna\u00EEtre les fichiers identiques \u00E0 l'aide leur date");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -88,12 +87,12 @@ public class cop_set extends JDialog {
 			}
 		});
 		btnNewButton.setFont(new Font("Comic Sans MS", Font.BOLD | Font.ITALIC, 17));
-		btnNewButton.setBounds(458, 284, 293, 54);
+		btnNewButton.setBounds(38, 312, 265, 54);
 		contentPanel.add(btnNewButton);
 		
 		JButton btnTailleDuFichier = new JButton("Taille du fichier");
 		btnTailleDuFichier.setForeground(new Color(0, 0, 0));
-		btnTailleDuFichier.setBackground(new Color(0, 0, 0));
+		btnTailleDuFichier.setBackground(Color.WHITE);
 		btnTailleDuFichier.setToolTipText("reconna\u00EEtre les fichiers identiques \u00E0 l'aide leur taille");
 		btnTailleDuFichier.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -111,12 +110,13 @@ public class cop_set extends JDialog {
 			}
 		});
 		btnTailleDuFichier.setFont(new Font("Comic Sans MS", Font.BOLD | Font.ITALIC, 17));
-		btnTailleDuFichier.setBounds(32, 284, 244, 54);
+		btnTailleDuFichier.setBounds(469, 312, 244, 54);
 		contentPanel.add(btnTailleDuFichier);
 		
 	   tex = new JLabel("**Reconna\u00EEtre les fichiers identiques \u00E0 l'aide de leur taille et de leur date* *");
+	   tex.setIcon(new ImageIcon(cop_set.class.getResource("/sync/icons/File.png")));
 		tex.setFont(new Font("Comic Sans MS", Font.BOLD | Font.ITALIC, 15));
-		tex.setBounds(89, 358, 644, 76);
+		tex.setBounds(91, 381, 644, 76);
 		contentPanel.add(tex);
 		{
 			JPanel buttonPane = new JPanel();
