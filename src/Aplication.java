@@ -190,7 +190,7 @@ public class Aplication extends JFrame implements ActionListener{
 		contentPane.add(panel);
 		panel.setLayout(null);
 		JButton comparer = new JButton("Comparer");
-		comparer.setBackground(new Color(255, 255, 255));
+		comparer.setBackground(Color.BLUE);
 		comparer.setToolTipText("Comparer");
 
 		//Compare button Action 
@@ -372,7 +372,7 @@ public class Aplication extends JFrame implements ActionListener{
 		panel.add(comparer);
 		
 		JButton btnSynchronise = new JButton("Synchroniser");
-		btnSynchronise.setBackground(new Color(255, 255, 255));
+		btnSynchronise.setBackground(new Color(34, 139, 34));
 		btnSynchronise.setToolTipText("Synchroniser");
 		
 		//Sync button action
@@ -423,7 +423,7 @@ public class Aplication extends JFrame implements ActionListener{
 			   		}
 			   		
 			   		}
-			   		}
+			   		}actionPerformed1() ;//appeler une méthode
 			   	//copier les fichiers ï¿½ partir de la droite si le sens de la synchronisation des fichiers ï¿½ partir de gauche a droite 
 			   		if(droit_gauche.isEnabled()){
 					for(int i =0;i<tab2.getRowCount();i++){
@@ -463,7 +463,7 @@ public class Aplication extends JFrame implements ActionListener{
 			   		}
 			   		
 			   		}
-			   	}	
+			   	}	actionPerformed1() ;//appeler une méthode
 			   	//la supression des fichers
 			   		if(sup_gauche.isEnabled()){
 			   		Sync.del_file(tab, tab3);
@@ -479,17 +479,18 @@ public class Aplication extends JFrame implements ActionListener{
 				        }
 						
 						syn=false;
+						actionPerformed1() ;//appeler une méthode
 			   		}
 		        
 				}
 			}
-			   	
+		
 						
 				
 		);
 		btnSynchronise.setIcon(new ImageIcon(Aplication.class.getResource("/sync/icons/synchronization-arrows-couple22.png")));
 		btnSynchronise.setFont(new Font("Segoe UI", Font.BOLD, 16));
-		btnSynchronise.setBounds(467, 11, 186, 39);
+		btnSynchronise.setBounds(467, 7, 186, 39);
 		panel.add(btnSynchronise);
 		
 		JButton button_3 = new JButton("");
@@ -600,7 +601,7 @@ public class Aplication extends JFrame implements ActionListener{
 		
 		//Parcourir button action 
 		JButton Parcourir2 = new JButton("Parcourir");
-		Parcourir2.setBackground(new Color(255, 255, 255));
+		Parcourir2.setBackground(Color.LIGHT_GRAY);
 		Parcourir2.setToolTipText("S\u00E9lectionner le 2eme dossier");
 		Parcourir2.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		Parcourir2.addActionListener(new ActionListener() {
@@ -621,7 +622,7 @@ public class Aplication extends JFrame implements ActionListener{
 		panel_1.add(lblDragDrob);
 		
 		JButton btnBrowse = new JButton("Parcourir");
-		btnBrowse.setBackground(new Color(255, 255, 255));
+		btnBrowse.setBackground(Color.LIGHT_GRAY);
 		btnBrowse.setToolTipText("S\u00E9lectionner le 1ere dossier");
 		btnBrowse.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		
@@ -818,6 +819,165 @@ public class Aplication extends JFrame implements ActionListener{
 	public static boolean sens(){
 		return gauche_droit.isEnabled();
 	}
+	
+	//méthode pour Comparer les deux dossier
+	public void actionPerformed1() {
+		int nb_file=0;
+		int nb_rep=0;
+		file_2.setText(Integer.toString(nb_file)+"File");
+		rep_2.setText(Integer.toString(nb_rep)+"Repertoire");
+		fcoun_1.setText(Integer.toString(nb_file)+"File");
+		repcount_1.setText(Integer.toString(nb_rep)+"Repertoire");
 		
+		model.setRowCount(0);
+		model2.setRowCount(0);
+		model4=(DefaultTableModel) tab3.getModel();
+		model4.setRowCount(0);
+		tab.setModel(model);
+		tab2.setModel(model2);
+		tab3.setModel(model4);
+		int ts;
+		Object [] row2 =  new Object[3] ;
+		File file=new File(tf.getText());
+		LinkedList<File> fs=new LinkedList<File>();
+		File file2=new File(tf2.getText());
+		LinkedList<File> fs2=new LinkedList<>();
+	    
+		
+			
+
+			for(File f:file.listFiles()){                //mettre le contenu de le 1ere répertoire dans une list
+			if(!(f.getName().equals(new File(tf2.getText()).getName()))){	
+
+			      fs.add(f);
+				
+				 }
+			}
+			tab.setModel(CustomModel.getModel(fs, file2, model));          //aficher les fichiers/dossiers existe dans le 1ere rep et n'existe past dans le 2eme
+			int si1=tab.getRowCount();
+			sa=si1;
+			  for(int i =1;i<=tab.getRowCount();i++){
+	        	  row2[0]= null;
+		          row2[1]=null;
+		          row2[2]= null;
+		          model2.addRow(row2);
+	        }
+			  tab2.setModel(model2);  
+			fs.clear();
+			for(File f2:file2.listFiles()){                    // //mettre le contenu de le 2eme répertoire dans une list
+				if(!(f2.getName().equals(new File(tf.getText()).getName()))){	
+				fs2.add(f2);
+				}
+				}
+			tab2.setModel( CustomModel.getModel(fs2,file,model2));     //aficher les fichiers/dossiers existe dans le 2eme rep et n'existe past dans le 1ere
+			fs2.clear();
+			  if(tab.getRowCount()<=tab2.getRowCount()){         
+		        	ts=tab2.getRowCount();
+		        }
+		        else{
+		        	ts=tab.getRowCount();
+		        }
+		        for(int i =0;i<=ts-1;i++){
+		        	Object [] row =  new Object[4] ;
+		        	if(i<si1){
+		        		if(gauche_droit.isEnabled()){			        	     
+		        		         row[0]= Boolean.TRUE;
+		        		         }
+		        	else{
+		        		row[0]= Boolean.FALSE;
+		        		}
+						         row[1]= new ImageIcon(Aplication.class.getResource("/sync/icons/so_update_right_small.png"));
+				                 row[2]=Boolean.FALSE;
+				                 row[3]=new ImageIcon(Aplication.class.getResource("/sync/icons/sup_v.png"));       
+		        	}
+		        	else{
+		        		if(gauche_droit.isEnabled()){			        	     
+	        		         row[0]= Boolean.FALSE;
+	        		         }
+	        	else{
+	        		row[0]= Boolean.TRUE;
+	        		}
+							row[1]= new ImageIcon(Aplication.class.getResource("/sync/icons/so_update_left_small.png"));
+					        row[2]=Boolean.FALSE;
+					        row[3]=new ImageIcon(Aplication.class.getResource("/sync/icons/sup_b.png")) ;	
+		        		}
+				        model4.addRow(row);
+			        	}
+		       
+		        tab3.setModel(model4);
+			    tab3.addMouseListener(new MouseAdapter() {
+			    	  public void mouseClicked(MouseEvent e) {
+			    		    if (e.getClickCount() !=0) {
+			    		      JTable target = (JTable)e.getSource();
+			    		      int row = target.getSelectedRow();
+			    		      int col = target.getSelectedColumn();
+			    		      if(col==0){
+			    		    	  if(tab3.getValueAt(row, col)==Boolean.TRUE){
+			    		    		  tab3.setValueAt(Boolean.FALSE, row, 2);
+			    		    	  }
+			    		      }
+			    		      else{
+			    		    	  if(col==2){
+			    		    		  if(tab3.getValueAt(row, col)==Boolean.TRUE){
+				    		    		  tab3.setValueAt(Boolean.FALSE, row, 0);
+				    		    	  } 
+			    		    	  } 
+			    		      }					    		   
+			    		    }
+			    		  }
+			    		});
+			     
+			        
+			   
+		        Object [] ro =  new Object[3] ;
+		        DefaultTableModel model5 =(DefaultTableModel) tab.getModel();   //model5 pour aficher des lignes vide dans le 1ere tab
+		        for(int i=0;i<tab2.getRowCount();i++){
+		        	if(!(i<tab.getRowCount())){
+		        	ro[0]=null;
+		        	ro[1]=null;
+		        	ro[2]=null;
+		        model5.addRow(ro);
+		        	}
+		        }
+		        tab.setModel(model5);
+		if(!(tab.getRowCount()==0)){       //determiner le nombre des fichiers est les repertoire dans le 1ere tab
+			int nbf=0;
+			int nbr=0;
+			fcoun_1.setVisible(true);
+			repcount_1.setVisible(true);
+			for(int i=0;i<tab.getRowCount();i++){
+				if(!(tab.getValueAt(i, 0)==null)){	
+				if(new File(tab.getValueAt(i, 0).toString()).isDirectory()){
+					nbr++;
+				}
+				else{
+					nbf++;
+				}
+				}
+			}
+			fcoun_1.setText(Integer.toString(nbf)+"File");
+			repcount_1.setText(Integer.toString(nbr)+"Repertoire");
+		}
+		
+		if(!(tab2.getRowCount()==0)){      //determiner le nombre des fichiers est les repertoire dans le 2eme tab
+			int nbf=0;
+			int nbr=0;
+			file_2.setVisible(true);
+			rep_2.setVisible(true);
+			for(int i=0;i<tab2.getRowCount();i++){
+			if(!(tab2.getValueAt(i, 0)==null)){	
+				if(new File(tab2.getValueAt(i, 0).toString()).isDirectory()){
+					nbr++;
+				}
+				else{
+					nbf++;
+				}
+			}
+			file_2.setText(Integer.toString(nbf)+"File");
+			rep_2.setText(Integer.toString(nbr)+"Repertoire");
+		}
+		}
+		}
+	    
 	
 }
