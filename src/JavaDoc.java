@@ -17,6 +17,11 @@ public class JavaDoc {
  * @param text: paramétre de type JLabel qui contient le texte a afficher selon leur taille ou bien la date 
  * @exception e
  */
+	/**
+	 * Changement de la vue d'interface 
+	 * @author chiraz
+	 * */
+	 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
