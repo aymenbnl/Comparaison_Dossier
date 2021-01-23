@@ -41,6 +41,7 @@ import java.awt.SystemColor;
 
 import javax.swing.border.EtchedBorder;
 import javax.swing.UIManager;
+import java.awt.Toolkit;
 
 
 public class Aplication extends JFrame implements ActionListener{
@@ -101,6 +102,7 @@ public class Aplication extends JFrame implements ActionListener{
 	 * 
 	 */
 	public Aplication() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Aplication.class.getResource("/sync/icons/folder.png")));
 		setTitle("Comparaison_Dossier");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -368,7 +370,7 @@ public class Aplication extends JFrame implements ActionListener{
 				);
 		comparer.setIcon(new ImageIcon(Aplication.class.getResource("/sync/icons/105690211025884527.png")));
 		comparer.setFont(new Font("Segoe UI", Font.BOLD, 16));
-		comparer.setBounds(113, 11, 186, 39);
+		comparer.setBounds(20, 7, 186, 39);
 		panel.add(comparer);
 		
 		JButton btnSynchronise = new JButton("Synchroniser");
@@ -423,7 +425,7 @@ public class Aplication extends JFrame implements ActionListener{
 			   		}
 			   		
 			   		}
-			   		}actionPerformed1() ;//appeler une méthode
+			   		}actionPerformed1() ;//appeler une mï¿½thode
 			   	//copier les fichiers ï¿½ partir de la droite si le sens de la synchronisation des fichiers ï¿½ partir de gauche a droite 
 			   		if(droit_gauche.isEnabled()){
 					for(int i =0;i<tab2.getRowCount();i++){
@@ -463,7 +465,7 @@ public class Aplication extends JFrame implements ActionListener{
 			   		}
 			   		
 			   		}
-			   	}	actionPerformed1() ;//appeler une méthode
+			   	}	actionPerformed1() ;//appeler une mï¿½thode
 			   	//la supression des fichers
 			   		if(sup_gauche.isEnabled()){
 			   		Sync.del_file(tab, tab3);
@@ -479,7 +481,7 @@ public class Aplication extends JFrame implements ActionListener{
 				        }
 						
 						syn=false;
-						actionPerformed1() ;//appeler une méthode
+						actionPerformed1() ;//appeler une mï¿½thode
 			   		}
 		        
 				}
@@ -503,7 +505,7 @@ public class Aplication extends JFrame implements ActionListener{
 		});
 		button_3.setToolTipText("Synchronisation Param\u00E9tres");
 		button_3.setIcon(new ImageIcon(Aplication.class.getResource("/sync/icons/settings-work-tool22.png")));
-		button_3.setBounds(399, 11, 40, 39);
+		button_3.setBounds(399, 7, 40, 39);
 		panel.add(button_3);		
 		
 		JButton button = new JButton("");
@@ -515,7 +517,7 @@ public class Aplication extends JFrame implements ActionListener{
 		});
 		button.setIcon(new ImageIcon(Aplication.class.getResource("/sync/icons/settings-work-tool1.png")));
 		button.setToolTipText("Comparaison Param\u00E9tres");
-		button.setBounds(40, 11, 40, 39);
+		button.setBounds(236, 7, 40, 39);
 		panel.add(button);
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(new Color(255, 255, 255));
@@ -820,7 +822,7 @@ public class Aplication extends JFrame implements ActionListener{
 		return gauche_droit.isEnabled();
 	}
 	
-	//méthode pour Comparer les deux dossier
+	//mï¿½thode pour Comparer les deux dossier
 	public void actionPerformed1() {
 		int nb_file=0;
 		int nb_rep=0;
@@ -846,7 +848,7 @@ public class Aplication extends JFrame implements ActionListener{
 		
 			
 
-			for(File f:file.listFiles()){                //mettre le contenu de le 1ere répertoire dans une list
+			for(File f:file.listFiles()){                //mettre le contenu de le 1ere rï¿½pertoire dans une list
 			if(!(f.getName().equals(new File(tf2.getText()).getName()))){	
 
 			      fs.add(f);
@@ -864,7 +866,7 @@ public class Aplication extends JFrame implements ActionListener{
 	        }
 			  tab2.setModel(model2);  
 			fs.clear();
-			for(File f2:file2.listFiles()){                    // //mettre le contenu de le 2eme répertoire dans une list
+			for(File f2:file2.listFiles()){                    // //mettre le contenu de le 2eme rï¿½pertoire dans une list
 				if(!(f2.getName().equals(new File(tf.getText()).getName()))){	
 				fs2.add(f2);
 				}

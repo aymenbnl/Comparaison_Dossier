@@ -38,20 +38,21 @@ public class cop_set extends JDialog {
 	 * Create the dialog.
 	 */
 	public cop_set() {
+		setTitle("Comparaison");
 		setBackground(new Color(255, 255, 255));
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\AMEL\\Desktop\\calendriepng.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(cop_set.class.getResource("/sync/icons/compare_small.png")));
 		setBounds(100, 100, 811, 524);
 		getContentPane().setLayout(new BorderLayout());
-		contentPanel.setBackground(new Color(255, 182, 193));
+		contentPanel.setBackground(new Color(255, 192, 203));
 		contentPanel.setForeground(new Color(165, 42, 42));
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 		
 		JLabel lblChoisirUneVariante = new JLabel("-----Choisir une variante----");
-		lblChoisirUneVariante.setForeground(new Color(220, 20, 60));
-		lblChoisirUneVariante.setFont(new Font("Comic Sans MS", Font.BOLD | Font.ITALIC, 18));
-		lblChoisirUneVariante.setBounds(260, 10, 303, 39);
+		lblChoisirUneVariante.setForeground(Color.WHITE);
+		lblChoisirUneVariante.setFont(new Font("Courier New", Font.BOLD | Font.ITALIC, 18));
+		lblChoisirUneVariante.setBounds(226, 10, 385, 39);
 		contentPanel.add(lblChoisirUneVariante);
 		
 		final JLabel size = new JLabel("");
@@ -75,12 +76,12 @@ public class cop_set extends JDialog {
 				if(!chang){
 					size.setEnabled(true);
 					date.setEnabled(false);
-					tex.setText("Reconnaître les fichiers identiques à l'aide de leur taille.");
+					tex.setText("Reconnaï¿½tre les fichiers identiques ï¿½ l'aide de leur taille.");
 				}
 				else{
 					size.setEnabled(false);
 					date.setEnabled(true);
-					tex.setText("Reconnaître les fichiers identiques à l'aide de leur date.");
+					tex.setText("Reconnaï¿½tre les fichiers identiques ï¿½ l'aide de leur date.");
 	
 				}
 				chang=!chang;
@@ -99,12 +100,12 @@ public class cop_set extends JDialog {
 				if(!chang){
 					size.setEnabled(true);
 					date.setEnabled(false);
-					tex.setText("Reconnaître les fichiers identiques à l'aide de leur taille.");
+					tex.setText("Reconnaï¿½tre les fichiers identiques ï¿½ l'aide de leur taille.");
 				}
 				else{
 					size.setEnabled(false);
 					date.setEnabled(true);
-					tex.setText("Reconnaître les fichiers identiques à l'aide de leur date.");
+					tex.setText("Reconnaï¿½tre les fichiers identiques ï¿½ l'aide de leur date.");
 				}
 				chang=!chang;
 			}
@@ -120,7 +121,7 @@ public class cop_set extends JDialog {
 		contentPanel.add(tex);
 		{
 			JPanel buttonPane = new JPanel();
-			buttonPane.setBackground(new Color(255, 182, 193));
+			buttonPane.setBackground(new Color(255, 192, 203));
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
@@ -128,7 +129,7 @@ public class cop_set extends JDialog {
 				okButton.setVerticalAlignment(SwingConstants.TOP);
 				okButton.setForeground(new Color(0, 0, 0));
 				okButton.setFont(new Font("Trebuchet MS", Font.BOLD | Font.ITALIC, 12));
-				okButton.setBackground(new Color(255, 182, 193));
+				okButton.setBackground(Color.WHITE);
 				okButton.setIcon(new ImageIcon(cop_set.class.getResource("/sync/icons/fast-forward333.png")));
 				okButton.setToolTipText("confirmer votre variante");
 				okButton.addActionListener(new ActionListener() {
@@ -144,7 +145,7 @@ public class cop_set extends JDialog {
 			{
 				JButton cancelButton = new JButton("Cancel");
 				cancelButton.setFont(new Font("Trebuchet MS", Font.ITALIC, 14));
-				cancelButton.setBackground(new Color(255, 182, 193));
+				cancelButton.setBackground(Color.WHITE);
 				cancelButton.setIcon(new ImageIcon(cop_set.class.getResource("/sync/icons/exit2.png")));
 				cancelButton.setToolTipText("annuler");
 				cancelButton.addActionListener(new ActionListener() {

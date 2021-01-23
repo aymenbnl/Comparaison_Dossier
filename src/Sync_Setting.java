@@ -51,7 +51,7 @@ public class Sync_Setting extends JDialog {
 	 */
 	public Sync_Setting() {
 		setTitle("Synchronisation");
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\DELL\\eclipse-workspace\\Comparaison-Dossier\\src\\sync\\icons\\104952_mac-gadgets-on-a-desk-wallpapers-free-desktop-backgrounds-and_800x600_h.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Sync_Setting.class.getResource("/sync/icons/arrows22.png")));
 		setBounds(100, 100, 569, 428);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -198,7 +198,8 @@ public class Sync_Setting extends JDialog {
 		panel.add(lblNewLabel);
 		{
 			JPanel buttonPane = new JPanel();
-			buttonPane.setBounds(2, 353, 553, 56);
+			buttonPane.setBackground(Color.LIGHT_GRAY);
+			buttonPane.setBounds(0, 353, 555, 56);
 			contentPanel.add(buttonPane);
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			{

@@ -38,7 +38,7 @@ public class Help extends JDialog {
 	 */
 	public Help() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Help.class.getResource("/sync/icons/about.png")));
-		setTitle("About");
+		setTitle("Help");
 		setBounds(100, 100, 583, 422);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBackground(new Color(255, 228, 225));
@@ -94,9 +94,14 @@ public class Help extends JDialog {
 		contentPanel.add(label_2);
 		label_2.setBackground(Color.GRAY);
 		label_2.setIcon(new ImageIcon(Help.class.getResource("/sync/icons/set_syn.png")));
+		
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\DELL\\Desktop\\b7363e8dba75e961d6193b0d92a55035.jpg"));
+		lblNewLabel_1.setBounds(-234, -1, 801, 350);
+		contentPanel.add(lblNewLabel_1);
 		{
 			JPanel buttonPane = new JPanel();
-			buttonPane.setBackground(new Color(255, 228, 225));
+			buttonPane.setBackground(Color.WHITE);
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
